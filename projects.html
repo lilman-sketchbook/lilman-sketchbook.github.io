@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects — Lilman's Sketchbook</title>
+  <style>
+    :root {
+      --bg: #0d0d0d;
+      --accent: #BA3B46;
+      --accent2: #DE9151;
+      --text: #ffffff;
+    }
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+    header {
+      text-align: center;
+      padding: 3rem 1rem;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+    }
+    header h1 {
+      margin: 0;
+      font-size: 3rem;
+      font-weight: 900;
+    }
+    nav {
+      background: #111;
+      padding: 1rem;
+      text-align: center;
+    }
+    nav a {
+      color: var(--text);
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: var(--accent);
+    }
+    section {
+      max-width: 900px;
+      margin: auto;
+      padding: 3rem 1.5rem;
+    }
+    h2 {
+      font-size: 2.5rem;
+      border-left: 6px solid var(--accent);
+      padding-left: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .card {
+      background: #1a1a1a;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    }
+    .image-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .image-row img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 10px;
+      margin: 0.5rem;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #111;
+      margin-top: 3rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Projects</h1>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="projects.html">Projects</a>
+    <a href="experience.html">Experience</a>
+    <a href="social.html">Social</a>
+  </nav>
+
+  <section>
+    <h2>My Tees</h2>
+    <div class="card">
+      <p>A collection of my custom T-shirt mockups.</p>
+      <div class="image-row">
+        <img src="tee1.png" alt="Tee Mockup 1" />
+        <img src="tee2.png" alt="Tee Mockup 2" />
+        <img src="tee3.png" alt="Tee Mockup 3" />
+        <img src="tee4.png" alt="Tee Mockup 4" />
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Your Name — Bold. Colorful. Creative.</p>
+  </footer>
+
+</body>
+</html>
