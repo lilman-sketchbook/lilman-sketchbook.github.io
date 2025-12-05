@@ -59,6 +59,22 @@
       border-radius: 12px;
       box-shadow: 0 0 10px rgba(0,0,0,0.4);
     }
+
+    /* Swipe Gallery */
+    .swipe-gallery {
+      display: flex;
+      overflow-x: scroll;
+      scroll-snap-type: x mandatory;
+      gap: 1rem;
+      padding-bottom: 1rem;
+    }
+    .swipe-gallery img {
+      flex: 0 0 80%;
+      max-width: 300px;
+      border-radius: 12px;
+      scroll-snap-align: center;
+    }
+
     .image-row {
       display: flex;
       flex-wrap: wrap;
@@ -97,7 +113,8 @@
     <h2>Custom Clothing</h2>
     <div class="card">
       <p>a collection of my personal custom prints.</p>
-<!-- Swipe Gallery -->
+
+      <!-- Swipe Gallery -->
       <div class="swipe-gallery">
         <img src="poptee.png" alt="Popeye Tee" />
         <img src="prntee.png" alt="Boriqua Nightmare" />
@@ -107,18 +124,19 @@
         <img src="bpftee.png" alt="Big Pun Tee front" />
         <img src="bpbtee.png" alt="Big pun Tee Back" />
       </div>
+
     </div>
   </section>
 
   <section>
     <h2>Mock Album Covers</h2>
     <div class="card">
-      <p>a series of original album covers experiments</p>
+      <p>a series of original album cover experiments</p>
       <div class="image-row">
-        <img  />
-        <img  />
-        <img  />
-        <img  />
+        <img />
+        <img />
+        <img />
+        <img />
       </div>
     </div>
   </section>
@@ -128,19 +146,19 @@
     <div class="card">
       <p>a set of augmented imagery</p>
       <div class="image-row">
-        <img  />
-        <img  />
-        <img  />
-        <img  />
+        <img />
+        <img />
+        <img />
+        <img />
       </div>
     </div>
   </section>
-  
+
   <footer>
-     <div style="text-align: center;">
-    <img src="signature Banner.png" alt="Footer Artwork" style="width: 100%; max-width: 600px;">
-     </div>
-   <p style="text-align: center;">© 2025 Lil'man's Sketchbook - Dare to live, if you fear it you can't </p>
+    <div style="text-align: center;">
+      <img src="signature Banner.png" alt="Footer Artwork" style="width: 100%; max-width: 600px;">
+    </div>
+    <p style="text-align: center;">© 2025 Lil'man's Sketchbook - Dare to live, if you fear it you can't</p>
   </footer>
 
 </body>
