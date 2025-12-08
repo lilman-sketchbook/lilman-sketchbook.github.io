@@ -62,22 +62,20 @@
 
     /* Swipe Gallery */
     .swipe-gallery {
-  height: 300px;       /* SAME height for all images */
-  width: auto;         /* Prevent stretching */
-  object-fit: contain; /* Keep proportions perfect */
-  flex: 0 0 auto;      /* Stop flexbox from forcing width */
-  border-radius: 12px;
-  scroll-snap-align: center;
+      display: flex;
+      overflow-x: scroll;
+      scroll-snap-type: x mandatory;
+      gap: 1rem;
+      padding-bottom: 1rem;
     }
+
     .swipe-gallery img {
-      flex: 0 0 80%;
-      max-width: 300px;
+      height: 300px;       /* same height for all */
+      width: auto;         /* maintain proportions */
+      object-fit: contain; /* prevents distortion */
+      flex: 0 0 auto;      /* stops forced width */
       border-radius: 12px;
       scroll-snap-align: center;
-
-      /* Option 3 — Prevent Distortion */
-      object-fit: contain;
-      height: auto;
     }
 
     .image-row {
