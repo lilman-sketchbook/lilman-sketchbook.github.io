@@ -62,11 +62,12 @@
 
     /* Swipe Gallery */
     .swipe-gallery {
-      display: flex;
-      overflow-x: scroll;
-      scroll-snap-type: x mandatory;
-      gap: 1rem;
-      padding-bottom: 1rem;
+  height: 300px;       /* SAME height for all images */
+  width: auto;         /* Prevent stretching */
+  object-fit: contain; /* Keep proportions perfect */
+  flex: 0 0 auto;      /* Stop flexbox from forcing width */
+  border-radius: 12px;
+  scroll-snap-align: center;
     }
     .swipe-gallery img {
       flex: 0 0 80%;
