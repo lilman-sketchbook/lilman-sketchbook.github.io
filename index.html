@@ -4,69 +4,100 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lilman's Sketchbook</title>
+
   <style>
+    /* ----------------------------------------
+       CUSTOM FONT
+    ----------------------------------------- */
+    @font-face {
+      font-family: "Bullpen3D";
+      src: url("fonts/Bullpen3D.ttf") format("truetype");
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    /* ----------------------------------------
+       COLOR VARIABLES
+    ----------------------------------------- */
     :root {
       --accent: #BA3B46;
       --accent2: #DE9151;
       --text: #ffffff;
     }
 
-    /* HOME PAGE BACKGROUND */
+    /* ----------------------------------------
+       BACKGROUND
+    ----------------------------------------- */
     body {
       margin: 0;
-      font-family: 'Arial', sans-serif;
-      background: url("Loop.jpg");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
+      font-family: 'Arial', sans-serif; /* default for body text */
+      background: url("Loop.jpg") center/cover no-repeat fixed;
       color: var(--text);
     }
 
-    /* HEADER IMAGE */
+    /* ----------------------------------------
+       HEADER IMAGE
+    ----------------------------------------- */
     header.header-image {
       width: 100%;
-      height: 260px;   /* adjust for taller/shorter header */
-      background-image: url("Header.png");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
+      height: 260px;
+      background: url("Header.png") center/cover no-repeat;
     }
 
+    /* ----------------------------------------
+       NAVIGATION
+    ----------------------------------------- */
     nav {
       background: #111;
       padding: 1rem;
       text-align: center;
     }
+
     nav a {
+      font-family: "Bullpen3D", sans-serif; /* << YOUR CUSTOM FONT */
       color: var(--text);
       margin: 0 1rem;
       text-decoration: none;
       font-weight: bold;
+      font-size: 1.3rem;
+      letter-spacing: 1px;
     }
+
     nav a:hover {
       color: var(--accent);
     }
 
+    /* ----------------------------------------
+       SECTIONS
+    ----------------------------------------- */
     section {
       max-width: 900px;
       margin: auto;
       padding: 3rem 1.5rem;
-      background: rgba(0,0,0,0.6); /* optional: helps text stand out */
+      background: rgba(0,0,0,0.6);
       border-radius: 12px;
       margin-top: 2rem;
     }
 
-    h2 {
-      font-size: 2.5rem;
-      border-left: 6px solid var(--accent);
-      padding-left: 1rem;
-      margin-bottom: 1.5rem;
+    /* ----------------------------------------
+       INTRO SECTION CUSTOMIZATION
+    ----------------------------------------- */
+    #Intro h2 {
+      text-align: center;
+      font-size: 3rem;   /* bigger title */
+      margin-bottom: 1rem;
     }
 
-    p {
-      font-size: 1.1rem;
-      line-height: 1.6;
+    #Intro p {
+      text-align: center;
+      font-size: 1.3rem; /* larger intro text */
+      line-height: 1.7;
+    }
+
+    /* Default heading style for other pages */
+    section h2 {
+      border-left: 6px solid var(--accent);
+      padding-left: 1rem;
     }
 
     footer {
@@ -75,6 +106,7 @@
       background: #111;
       margin-top: 3rem;
     }
+
   </style>
 </head>
 
@@ -83,6 +115,7 @@
   <!-- HEADER IMAGE -->
   <header class="header-image"></header>
 
+  <!-- NAVIGATION -->
   <nav>
     <a href="index.html">Intro</a>
     <a href="about.html">About</a>
@@ -92,12 +125,14 @@
     <a href="social.html">Social</a>
   </nav>
 
+  <!-- INTRO SECTION -->
   <section id="Intro">
     <h2>Welcome!</h2>
     <p>Hey, I’m Lilman — or Roman when I have to sign forms.
     Welcome to my Sketchbook, the place where my ideas speak louder than I do.</p>
   </section>
 
+  <!-- FOOTER -->
   <footer>
     <div style="text-align: center;">
       <img src="signature Banner.png" alt="Footer Artwork" style="width: 100%; max-width: 600px;">
