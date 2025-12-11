@@ -6,27 +6,33 @@
   <title>Lilman's Sketchbook</title>
   <style>
     :root {
-      --bg: #0d0d0d;
       --accent: #BA3B46;
       --accent2: #DE9151;
       --text: #ffffff;
     }
+
+    /* HOME PAGE BACKGROUND */
     body {
       margin: 0;
       font-family: 'Arial', sans-serif;
-      background: var(--bg);
+      background: url("loop.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
       color: var(--text);
     }
-    header {
-      text-align: center;
-      padding: 3rem 1rem;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
+
+    /* HEADER IMAGE */
+    header.header-image {
+      width: 100%;
+      height: 260px;   /* adjust for taller/shorter header */
+      background-image: url("header.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
     }
-    header h1 {
-      margin: 0;
-      font-size: 3rem;
-      font-weight: 900;
-    }
+
     nav {
       background: #111;
       padding: 1rem;
@@ -41,24 +47,28 @@
     nav a:hover {
       color: var(--accent);
     }
+
     section {
       max-width: 900px;
       margin: auto;
       padding: 3rem 1.5rem;
+      background: rgba(0,0,0,0.6); /* optional: helps text stand out */
+      border-radius: 12px;
+      margin-top: 2rem;
     }
+
     h2 {
       font-size: 2.5rem;
       border-left: 6px solid var(--accent);
       padding-left: 1rem;
       margin-bottom: 1.5rem;
     }
-    .card {
-      background: #1a1a1a;
-      padding: 1.5rem;
-      margin-bottom: 1.5rem;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
     }
+
     footer {
       text-align: center;
       padding: 2rem;
@@ -67,11 +77,11 @@
     }
   </style>
 </head>
+
 <body>
 
-  <header>
-    <h1>lilman's sketchbook</h1>
-  </header>
+  <!-- HEADER IMAGE -->
+  <header class="header-image"></header>
 
   <nav>
     <a href="index.html">Intro</a>
@@ -84,17 +94,15 @@
 
   <section id="Intro">
     <h2>Welcome!</h2>
-    <div class="card">
-      <p>Hey, I’m Lilman or Roman when I have to sign forms.
-Welcome to my Sketchbook, the place where my ideas speak up louder than I do.</p>
-    </div>
+    <p>Hey, I’m Lilman — or Roman when I have to sign forms.
+    Welcome to my Sketchbook, the place where my ideas speak louder than I do.</p>
   </section>
 
   <footer>
-     <div style="text-align: center;">
-    <img src="signature Banner.png" alt="Footer Artwork" style="width: 100%; max-width: 600px;">
-     </div>
-   <p style="text-align: center;">© 2025 Lil'man's Sketchbook - Dare to live, if you fear it you can't </p>
+    <div style="text-align: center;">
+      <img src="signature Banner.png" alt="Footer Artwork" style="width: 100%; max-width: 600px;">
+    </div>
+    <p style="text-align: center;">© 2025 Lil'man's Sketchbook — Dare to live, if you fear it you can't</p>
   </footer>
 
 </body>
