@@ -5,62 +5,101 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Projects — Lilman's Sketchbook</title>
   <style>
+    /* ----------------------------------------
+       COLOR VARIABLES
+    ----------------------------------------- */
     :root {
       --bg: #0d0d0d;
       --accent: #BA3B46;
       --accent2: #DE9151;
       --text: #ffffff;
     }
+
+    /* ----------------------------------------
+       BODY & FONT
+    ----------------------------------------- */
     body {
       margin: 0;
       font-family: 'Arial', sans-serif;
-      background: var(--bg);
+      background: url("Loop.jpg") center/cover no-repeat fixed;
       color: var(--text);
     }
-    header {
-      text-align: center;
-      padding: 3rem 1rem;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
+
+    /* ----------------------------------------
+       HEADER
+    ----------------------------------------- */
+    header.header-image {
+      width: 100%;
+      height: 260px;
+      background: url("Header.png") center/cover no-repeat;
     }
+
     header h1 {
-      margin: 0;
+      text-align: center;
       font-size: 3rem;
-      font-weight: 900;
+      margin: 0;
+      padding: 2rem 1rem;
     }
+
+    /* ----------------------------------------
+       NAVIGATION
+    ----------------------------------------- */
     nav {
       background: #111;
       padding: 1rem;
       text-align: center;
     }
+
     nav a {
+      font-family: "Bullpen3D", sans-serif;
       color: var(--text);
       margin: 0 1rem;
       text-decoration: none;
       font-weight: bold;
+      font-size: 1.3rem;
+      letter-spacing: 1px;
     }
+
     nav a:hover {
       color: var(--accent);
     }
+
+    /* ----------------------------------------
+       SECTIONS
+    ----------------------------------------- */
     section {
       max-width: 900px;
-      margin: auto;
+      margin: 2rem auto;
       padding: 3rem 1.5rem;
+      background: rgba(0,0,0,0.6);
+      border-radius: 12px;
     }
-    h2 {
+
+    section h2 {
       font-size: 2.5rem;
-      border-left: 6px solid var(--accent);
-      padding-left: 1rem;
+      text-align: center;
       margin-bottom: 1.5rem;
+      border-left: none;
+      padding-left: 0;
     }
+
     .card {
-      background: #1a1a1a;
       padding: 1.5rem;
       margin-bottom: 1.5rem;
       border-radius: 12px;
+      background: rgba(26,26,26,0.8);
       box-shadow: 0 0 10px rgba(0,0,0,0.4);
     }
 
-    /* Swipe Gallery */
+    .card p {
+      font-size: 1.2rem;
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+
+    /* ----------------------------------------
+       SWIPE GALLERY
+    ----------------------------------------- */
     .swipe-gallery {
       display: flex;
       overflow-x: scroll;
@@ -70,39 +109,48 @@
     }
 
     .swipe-gallery img {
-      height: 300px;       /* same height for all */
-      width: auto;         /* maintain proportions */
-      object-fit: contain; /* prevents distortion */
-      flex: 0 0 auto;      /* stops forced width */
+      height: 300px;       
+      width: auto;         
+      object-fit: contain;
+      flex: 0 0 auto;      
       border-radius: 12px;
       scroll-snap-align: center;
     }
 
+    /* ----------------------------------------
+       IMAGE ROWS
+    ----------------------------------------- */
     .image-row {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
     }
+
     .image-row img {
       width: 100%;
       max-width: 300px;
-      border-radius: 10px;
+      border-radius: 12px;
       margin: 0.5rem;
     }
+
+    /* ----------------------------------------
+       FOOTER
+    ----------------------------------------- */
     footer {
       text-align: center;
       padding: 2rem;
       background: #111;
       margin-top: 3rem;
     }
+
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>Projects</h1>
-  </header>
+  <!-- HEADER IMAGE -->
+  <header class="header-image"></header>
 
+  <!-- NAVIGATION -->
   <nav>
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
@@ -112,10 +160,11 @@
     <a href="social.html">Social</a>
   </nav>
 
+  <!-- CUSTOM CLOTHING SECTION -->
   <section>
     <h2>Custom Clothing</h2>
     <div class="card">
-      <p>a collection of my personal custom prints.</p>
+      <p>A collection of my personal custom prints.</p>
 
       <!-- Swipe Gallery -->
       <div class="swipe-gallery">
@@ -126,41 +175,43 @@
         <img src="lpmtmtee.png" alt="Linkin Park Minutes to Midnight Tee" /> 
         <img src="bpftee.png" alt="Big Pun Tee front" />
       </div>
-
     </div>
   </section>
 
+  <!-- MOCK ALBUM COVERS SECTION -->
   <section>
     <h2>Mock Album Covers</h2>
     <div class="card">
-      <p>a series of original album cover experiments</p>
+      <p>A series of original album cover experiments.</p>
       <div class="image-row">
-        <img />
-        <img />
-        <img />
-        <img />
+        <img src="album1.png" alt="Album 1">
+        <img src="album2.png" alt="Album 2">
+        <img src="album3.png" alt="Album 3">
+        <img src="album4.png" alt="Album 4">
       </div>
     </div>
   </section>
 
+  <!-- PHOTO EDITS SECTION -->
   <section>
     <h2>Photo Edits</h2>
     <div class="card">
-      <p>a set of augmented imagery</p>
+      <p>A set of augmented imagery.</p>
       <div class="image-row">
-        <img />
-        <img />
-        <img />
-        <img />
+        <img src="edit1.png" alt="Edit 1">
+        <img src="edit2.png" alt="Edit 2">
+        <img src="edit3.png" alt="Edit 3">
+        <img src="edit4.png" alt="Edit 4">
       </div>
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer>
-    <div style="text-align: center;">
+    <div>
       <img src="signature Banner.png" alt="Footer Artwork" style="width: 100%; max-width: 600px;">
     </div>
-    <p style="text-align: center;">© 2025 Lil'man's Sketchbook - Dare to live, if you fear it you can't</p>
+    <p>© 2025 Lil'man's Sketchbook — Dare to live, if you fear it you can't</p>
   </footer>
 
 </body>
