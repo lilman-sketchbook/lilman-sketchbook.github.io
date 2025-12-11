@@ -3,21 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Projects — Lilman's Sketchbook</title>
+  <title>Sketchbook Pages — Lilman's Sketchbook</title>
   <style>
-    /* ----------------------------------------
-       COLOR VARIABLES
-    ----------------------------------------- */
     :root {
       --bg: #0d0d0d;
       --accent: #BA3B46;
       --accent2: #DE9151;
       --text: #ffffff;
     }
-
-    /* ----------------------------------------
-       BODY & FONT
-    ----------------------------------------- */
 
     body {
       margin: 0;
@@ -26,9 +19,7 @@
       color: var(--text);
     }
 
-    /* ----------------------------------------
-       HEADER
-    ----------------------------------------- */
+    /* Header */
     header.header-image {
       width: 100%;
       height: 260px;
@@ -41,9 +32,8 @@
       margin: 0;
       padding: 2rem 1rem;
     }
-    /* ----------------------------------------
-       NAVIGATION
-    ----------------------------------------- */
+
+    /* Navigation */
     nav {
       background: #111;
       padding: 1rem;
@@ -63,9 +53,8 @@
     nav a:hover {
       color: var(--accent);
     }
-    /* ----------------------------------------
-       SECTIONS
-    ----------------------------------------- */
+
+    /* Sections */
     section {
       max-width: 900px;
       margin: 2rem auto;
@@ -78,9 +67,10 @@
       font-size: 2.5rem;
       text-align: center;
       margin-bottom: 1.5rem;
-      border-left: none;
+      border-left: none; /* remove red vertical line */
       padding-left: 0;
     }
+
     .card {
       padding: 1.5rem;
       margin-bottom: 1.5rem;
@@ -94,37 +84,52 @@
       line-height: 1.7;
       margin-bottom: 1rem;
     }
+
+    /* Swipe Gallery */
+    .swipe-gallery {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 1rem;
+      padding-bottom: 1rem;
+    }
+
+    .swipe-gallery img {
+      height: 300px;
+      width: auto;
+      object-fit: contain;
+      flex: 0 0 auto;
+      border-radius: 12px;
+      scroll-snap-align: center;
+    }
+
+    /* Image rows */
+    .image-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .image-row img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 12px;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #111;
+      margin-top: 3rem;
+    }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>Sketchbook Pages</h1>
-  </header>
+  <!-- Header -->
+  <header class="header-image"></header>
 
-  <nav>
-    <a href="index.html">Intro</a>
-    <a href="about.html">About</a>
-    <a href="sketchbookpages.html">Sketchbook Pages</a>
-    <a href="projects.html">Projects</a>
-    <a href="experience.html">Experience</a>
-    <a href="social.html">Social</a>
-  </nav>
-
-  <section>
-    <h2>My Gallery</h2>
-    <div class="card">
-      <p>Add your images or artwork here.</p>
-    </div>
-  </section>
-
-<!-- FOOTER -->
-  <footer>
-    <div>
-      <img src="signature Banner.png" alt="Footer Artwork" style="width: 100%; max-width: 600px;">
-    </div>
-    <p>© 2025 Lil'man's Sketchbook — Dare to live, if you fear it you can't</p>
-  </footer>
-
-</body>
-</html>
+  <!-- Navigation -->
+  <
