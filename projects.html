@@ -1,52 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF‑8" />
-  <meta name="viewport" content="width=device‑width, initial‑scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Projects — Lilman's Sketchbook</title>
-
-  <!-- Splide CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.2.7/dist/css/splide.min.css">
-
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       background: url("blueprint.jpg") center/cover no-repeat fixed;
-      color: #ffffff;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    header.header-image {
+      width: 100%;
+      height: 260px;
+      background: url("Header.png") center/cover no-repeat;
+    }
+
+    header h1 {
+      text-align: center;
+      font-size: 3rem;
+      margin: 0;
+      padding: 2rem 1rem;
     }
 
     nav {
       background: #111;
-      padding: 1rem;
+      width: 100%;
       text-align: center;
+      padding: 1rem 0;
     }
     nav a {
-      color: #ffffff;
+      color: #fff;
       margin: 0 1rem;
       text-decoration: none;
-      font‑weight: bold;
-      font‑size: 1.3rem;
+      font-weight: bold;
+      font-size: 1.2rem;
     }
     nav a:hover {
       color: #BA3B46;
     }
 
     h2 {
+      margin: 2rem 0 1rem;
       text-align: center;
-      margin: 2rem 0;
-      font‑size: 2.3rem;
+      font-size: 2rem;
+    }
+
+    /* Carousel Styles */
+    .carousel {
+      position: relative;
+      width: 90%;
+      max-width: 600px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      border-radius: 12px;
+      margin-bottom: 3rem;
+    }
+
+    .carousel img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 12px;
+      transition: transform 0.3s ease;
+    }
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 2rem;
+      background: rgba(0,0,0,0.5);
+      padding: 0.3rem 0.6rem;
+      border-radius: 50%;
+      cursor: pointer;
+      user-select: none;
+      color: #fff;
+    }
+
+    .arrow-left { left: 20px; }
+    .arrow-right { right: 20px; }
+
+    /* Other sections */
+    section {
+      max-width: 900px;
+      width: 90%;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: rgba(0,0,0,0.6);
+      border-radius: 12px;
+    }
+
+    .image-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .image-row img {
+      width: 100%;
+      max-width: 300px;
+      margin: 0.5rem;
+      border-radius: 12px;
+      height: auto;
     }
 
     footer {
       text-align: center;
       padding: 2rem;
       background: #111;
-      margin-top: 3rem;
+      width: 100%;
     }
+
   </style>
 </head>
 <body>
+
+  <!-- Header -->
+  <header class="header-image"></header>
 
   <!-- Navigation -->
   <nav>
@@ -58,62 +135,74 @@
     <a href="social.html">Social</a>
   </nav>
 
+  <!-- Custom Clothing Carousel -->
   <h2>Custom Clothing</h2>
+  <div class="carousel">
+    <div class="arrow arrow-left">&#10094;</div>
+    <img src="poptee.png" alt="Popeye Tee" id="carousel-image">
+    <div class="arrow arrow-right">&#10095;</div>
+  </div>
 
-  <!-- SplideJS Carousel -->
-  <section id="image‑carousel" class="splide" aria‑label="Projects Carousel">
-    <div class="splide__track">
-      <ul class="splide__list">
+  <!-- Mock Album Covers Section -->
+  <section>
+    <h2>Mock Album Covers</h2>
+    <div class="image-row">
+      <img src="album1.png" alt="Album 1">
+      <img src="album2.png" alt="Album 2">
+      <img src="album3.png" alt="Album 3">
+      <img src="album4.png" alt="Album 4">
+    </div>
+  </section>
 
-        <li class="splide__slide">
-          <img src="poptee.png" alt="Popeye Tee">
-        </li>
-
-        <li class="splide__slide">
-          <img src="prntee.png" alt="Boriqua Nightmare Tee">
-        </li>
-
-        <li class="splide__slide">
-          <img src="s3ktee.png" alt="Sonic and Knuckles Tee">
-        </li>
-
-        <li class="splide__slide">
-          <img src="lprtee.png" alt="Linkin Park Reanimation Tee">
-        </li>
-
-        <li class="splide__slide">
-          <img src="lpmtmtee.png" alt="Linkin Park Minutes to Midnight Tee">
-        </li>
-
-        <li class="splide__slide">
-          <img src="bpftee.png" alt="Big Pun Tee">
-        </li>
-
-      </ul>
+  <!-- Photo Edits Section -->
+  <section>
+    <h2>Photo Edits</h2>
+    <div class="image-row">
+      <img src="edit1.png" alt="Edit 1">
+      <img src="edit2.png" alt="Edit 2">
+      <img src="edit3.png" alt="Edit 3">
+      <img src="edit4.png" alt="Edit 4">
     </div>
   </section>
 
   <!-- Footer -->
   <footer>
     <div>
-      <img src="signature Banner.png" alt="Footer Artwork" style="width: 100%; max‑width: 600px;">
+      <img src="signature Banner.png" alt="Footer Artwork" style="width: 100%; max-width: 600px;">
     </div>
     <p>© 2025 Lil'man's Sketchbook — Dare to live, if you fear it you can't</p>
   </footer>
 
-  <!-- Splide JS -->
-  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.2.7/dist/js/splide.min.js"></script>
-
+  <!-- Carousel Script -->
   <script>
-    document.addEventListener( 'DOMContentLoaded', function () {
-      new Splide( '#image‑carousel', {
-        type   : 'loop',     // infinite loop
-        perPage: 1,          // one slide at a time
-        autoplay: false,     // disable auto play (optional)
-        pagination: true,    // show pagination dots
-        arrows : true,       // show prev/next arrows
-      } ).mount();
-    } );
+    const images = [
+      "poptee.png",
+      "prntee.png",
+      "s3ktee.png",
+      "lprtee.png",
+      "lpmtmtee.png",
+      "bpftee.png"
+    ];
+
+    let current = 0;
+    const carouselImage = document.getElementById("carousel-image");
+
+    function showImage(index) {
+      carouselImage.src = images[index];
+    }
+
+    document.querySelector(".arrow-left").addEventListener("click", () => {
+      current = (current - 1 + images.length) % images.length;
+      showImage(current);
+    });
+
+    document.querySelector(".arrow-right").addEventListener("click", () => {
+      current = (current + 1) % images.length;
+      showImage(current);
+    });
+
+    // Initialize
+    showImage(current);
   </script>
 
 </body>
