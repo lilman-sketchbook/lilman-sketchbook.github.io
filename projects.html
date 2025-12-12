@@ -200,20 +200,46 @@
   </nav>
 
   <!-- CARD SLIDER -->
-  <h2 class="slider-title">Custom Clothing</h2>
+<h2 class="slider-title">Custom Clothing</h2>
 
-  <div id="custom-carousel" class="splide" aria-label="Custom Clothing Carousel">
-    <div class="splide__track">
-      <ul class="splide__list">
-        <li class="splide__slide"><img src="poptee.jpg" alt="Popeye Tee"></li>
-        <li class="splide__slide"><img src="prntee.jpg" alt="Boriqua Nightmare Tee"></li>
-        <li class="splide__slide"><img src="s3ktee.jpg" alt="Sonic and Knuckles Tee"></li>
-        <li class="splide__slide"><img src="lprtee.jpg" alt="LP Reanimation Tee"></li>
-        <li class="splide__slide"><img src="lpmtmtee.jpg" alt="LP Minutes to Midnight Tee"></li>
-        <li class="splide__slide"><img src="bpftee.jpg" alt="Big Pun Tee"></li>
-      </ul>
-    </div>
+<div id="custom-carousel" class="splide" aria-label="Custom Clothing Carousel">
+  <div class="splide__track">
+    <ul class="splide__list">
+      <li class="splide__slide"><img src="poptee.jpg" alt="Popeye Tee"></li>
+      <li class="splide__slide"><img src="prntee.jpg" alt="Boriqua Nightmare Tee"></li>
+      <li class="splide__slide"><img src="s3ktee.jpg" alt="Sonic and Knuckles Tee"></li>
+      <li class="splide__slide"><img src="lprtee.jpg" alt="LP Reanimation Tee"></li>
+      <li class="splide__slide"><img src="lpmtmtee.jpg" alt="LP Minutes to Midnight Tee"></li>
+      <li class="splide__slide"><img src="bpftee.jpg" alt="Big Pun Tee"></li>
+    </ul>
   </div>
+</div>
+
+<style>
+  /* Scale animation for active slide */
+  .splide__slide img {
+    transition: transform 0.4s ease;
+  }
+
+  .splide__slide.is-active img {
+    transform: scale(1.1); /* active slide grows 10% */
+  }
+</style>
+
+<script>
+  const splide = new Splide('#custom-carousel', {
+    type       : 'slide',
+    perPage    : 1,
+    focus      : 'center',
+    arrows     : true,
+    pagination : true,
+    rewind     : true,
+    autoWidth  : true,
+    gap        : '2rem',
+  });
+
+  splide.mount();
+</script>
 
   <!-- MOCK ALBUM COVERS SECTION -->
   <section>
