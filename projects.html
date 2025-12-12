@@ -32,7 +32,7 @@
     html, body {
       margin: 0;
       padding: 0;
-      overflow-x: hidden;
+      overflow-x: hidden; /* removes side-scroller */
     }
 
     body {
@@ -95,15 +95,12 @@
     /* ----------------------------------------
        Splide Custom Styling
     ----------------------------------------- */
-    .splide__slide {
-      display: flex;
-      justify-content: center; /* centers image inside slide */
-      align-items: center;
-    }
-
     .splide__slide img {
-      width: 300px;  /* adjust this to make images bigger/smaller */
+      width: 100%;
+      max-width: 600px;
       height: auto;
+      display: block;
+      margin: 0 auto;
       border-radius: 12px;
       object-fit: contain;
     }
@@ -120,11 +117,11 @@
     }
 
     .splide__arrow--prev {
-      left: 50px; /* move arrows slightly inward */
+      left: 20px;
     }
 
     .splide__arrow--next {
-      right: 50px;
+      right: 20px;
     }
 
     .splide__arrow:disabled {
@@ -181,7 +178,6 @@
       background: #111;
       margin-top: 3rem;
     }
-
   </style>
 </head>
 <body>
@@ -200,46 +196,20 @@
   </nav>
 
   <!-- CARD SLIDER -->
-<h2 class="slider-title">Custom Clothing</h2>
+  <h2 class="slider-title">Custom Clothing</h2>
 
-<div id="custom-carousel" class="splide" aria-label="Custom Clothing Carousel">
-  <div class="splide__track">
-    <ul class="splide__list">
-      <li class="splide__slide"><img src="poptee.jpg" alt="Popeye Tee"></li>
-      <li class="splide__slide"><img src="prntee.jpg" alt="Boriqua Nightmare Tee"></li>
-      <li class="splide__slide"><img src="s3ktee.jpg" alt="Sonic and Knuckles Tee"></li>
-      <li class="splide__slide"><img src="lprtee.jpg" alt="LP Reanimation Tee"></li>
-      <li class="splide__slide"><img src="lpmtmtee.jpg" alt="LP Minutes to Midnight Tee"></li>
-      <li class="splide__slide"><img src="bpftee.jpg" alt="Big Pun Tee"></li>
-    </ul>
+  <div id="custom-carousel" class="splide" aria-label="Custom Clothing Carousel">
+    <div class="splide__track">
+      <ul class="splide__list">
+        <li class="splide__slide"><img src="poptee.jpg" alt="Popeye Tee"></li>
+        <li class="splide__slide"><img src="prntee.jpg" alt="Boriqua Nightmare Tee"></li>
+        <li class="splide__slide"><img src="s3ktee.jpg" alt="Sonic and Knuckles Tee"></li>
+        <li class="splide__slide"><img src="lprtee.jpg" alt="LP Reanimation Tee"></li>
+        <li class="splide__slide"><img src="lpmtmtee.jpg" alt="LP Minutes to Midnight Tee"></li>
+        <li class="splide__slide"><img src="bpftee.jpg" alt="Big Pun Tee"></li>
+      </ul>
+    </div>
   </div>
-</div>
-
-<style>
-  /* Scale animation for active slide */
-  .splide__slide img {
-    transition: transform 0.4s ease;
-  }
-
-  .splide__slide.is-active img {
-    transform: scale(1.1); /* active slide grows 10% */
-  }
-</style>
-
-<script>
-  const splide = new Splide('#custom-carousel', {
-    type       : 'slide',
-    perPage    : 1,
-    focus      : 'center',
-    arrows     : true,
-    pagination : true,
-    rewind     : true,
-    autoWidth  : true,
-    gap        : '2rem',
-  });
-
-  splide.mount();
-</script>
 
   <!-- MOCK ALBUM COVERS SECTION -->
   <section>
@@ -283,12 +253,11 @@
     new Splide('#custom-carousel', {
       type       : 'slide',
       perPage    : 1,
-      focus      : 'center',
+      perMove    : 1,
       arrows     : true,
       pagination : true,
       rewind     : true,
-      autoWidth  : true,   // makes slide shrink to fit image
-      gap        : '2rem',
+      focus      : 'center',
     }).mount();
   </script>
 
