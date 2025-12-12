@@ -1,193 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Projects — Lilman's Sketchbook</title>
-<style>
-  /* ----------------------------------------
-     CUSTOM FONT
-  ----------------------------------------- */
-  @font-face {
-    font-family: "Bullpen3D";
-    src: url("fonts/Bullpen3D.ttf") format("truetype");
-    font-weight: normal;
-    font-style: normal;
-  }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects — Lilman's Sketchbook</title>
+  <style>
+    /* ----------------------------------------
+       CUSTOM FONTS
+    ----------------------------------------- */
+    @font-face {
+      font-family: "Bullpen3D";
+      src: url("fonts/Bullpen3D.ttf") format("truetype");
+      font-weight: normal;
+      font-style: normal;
+    }
 
-  @font-face {
-    font-family: "Designer";
-    src: url("fonts/Designer.otf") format("truetype");
-    font-weight: normal;
-    font-style: normal;
-  }
+    @font-face {
+      font-family: "Designer";
+      src: url("fonts/Designer.otf") format("truetype");
+      font-weight: normal;
+      font-style: normal;
+    }
 
-  /* ----------------------------------------
-     COLOR VARIABLES
-  ----------------------------------------- */
-  :root {
-    --bg: #0d0d0d;
-    --accent: #BA3B46;
-    --accent2: #DE9151;
-    --text: #ffffff;
-  }
+    /* ----------------------------------------
+       COLORS
+    ----------------------------------------- */
+    :root {
+      --bg: #0d0d0d;
+      --accent: #BA3B46;
+      --accent2: #DE9151;
+      --text: #ffffff;
+    }
 
-  /* ----------------------------------------
-     BODY & FONT
-  ----------------------------------------- */
-  body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    background: url("blueprint.jpg") center/cover no-repeat fixed;
-    color: var(--text);
-  }
+    /* ----------------------------------------
+       BODY
+    ----------------------------------------- */
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: url("blueprint.jpg") center/cover no-repeat fixed;
+      color: var(--text);
+    }
 
-  /* ----------------------------------------
-     HEADER
-  ----------------------------------------- */
-  header.header-image {
-    width: 100%;
-    height: 260px;
-    background: url("Header.png") center/cover no-repeat;
-  }
+    /* ----------------------------------------
+       HEADER
+    ----------------------------------------- */
+    header.header-image {
+      width: 100%;
+      height: 260px;
+      background: url("Header.png") center/cover no-repeat;
+    }
 
-  header h1 {
-    text-align: center;
-    font-size: 3rem;
-    margin: 0;
-    padding: 2rem 1rem;
-  }
+    header h1 {
+      text-align: center;
+      font-size: 3rem;
+      margin: 0;
+      padding: 2rem 1rem;
+    }
 
-  /* ----------------------------------------
-     NAVIGATION
-  ----------------------------------------- */
-  nav {
-    background: #111;
-    padding: 1rem;
-    text-align: center;
-  }
+    /* ----------------------------------------
+       NAVIGATION
+    ----------------------------------------- */
+    nav {
+      background: #111;
+      padding: 1rem;
+      text-align: center;
+    }
 
-  nav a {
-    font-family: "Bullpen3D", sans-serif;
-    color: var(--text);
-    margin: 0 1rem;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.3rem;
-    letter-spacing: 1px;
-  }
+    nav a {
+      font-family: "Bullpen3D", sans-serif;
+      color: var(--text);
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.3rem;
+      letter-spacing: 1px;
+    }
+    nav a:hover {
+      color: var(--accent);
+    }
 
-  nav a:hover {
-    color: var(--accent);
-  }
+    /* ----------------------------------------
+       SECTIONS
+    ----------------------------------------- */
+    section {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 3rem 1.5rem;
+      background: rgba(0,0,0,0.6);
+      border-radius: 12px;
+    }
 
-  /* ----------------------------------------
-     SECTIONS
-  ----------------------------------------- */
-  section {
-    max-width: 900px;
-    margin: 2rem auto;
-    padding: 3rem 1.5rem;
-    background: rgba(0,0,0,0.6);
-    border-radius: 12px;
-  }
+    section h2 {
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 1.5rem;
+      font-family: "Designer", sans-serif;
+      letter-spacing: 2px;
+    }
 
-  section h2 {
-    font-size: 2.5rem;
-    text-align: center;
-    margin-bottom: 1.5rem;
-    border-left: none;
-    padding-left: 0;
-  }
+    /* ----------------------------------------
+       CAROUSEL
+    ----------------------------------------- */
+    .carousel-container {
+      position: relative;
+      max-width: 900px;
+      margin: auto;
+      overflow: hidden;
+    }
 
-  .card {
-    padding: 1.5rem;
-    margin-bottom: 1.5rem;
-    border-radius: 12px;
-    background: rgba(26,26,26,0.8);
-    box-shadow: 0 0 10px rgba(0,0,0,0.4);
-  }
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
 
-  .card p {
-    font-size: 1.2rem;
-    line-height: 1.7;
-    margin-bottom: 1rem;
-  }
+    .carousel-card {
+      min-width: 100%;
+      flex-shrink: 0;
+      background: rgba(26,26,26,0.9);
+      border-radius: 16px;
+      padding: 1rem;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
 
-  /* ----------------------------------------
-     CARD SLIDER
-  ----------------------------------------- */
-  .slider-title {
-    text-align: center;
-    font-size: 2.3rem;
-    margin: 0 0 1rem 0;
-    color: var(--text);
-    font-family: "Designer", sans-serif;
-    letter-spacing: 2px;
-  }
+    .carousel-card img {
+      width: 100%;
+      height: auto;
+      max-height: 450px;
+      object-fit: contain;
+      border-radius: 12px;
+    }
 
-  .card-slider-container {
-    overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  padding: 0; /* remove side padding */
-  }
+    .carousel-card.active {
+      transform: scale(1.05);
+    }
 
-  .card-slider {
-    display: flex;
-    gap: 1.5rem;
-    padding: 2rem 0;
-    scroll-behavior: smooth;
-  }
+    /* ----------------------------------------
+       NAV BUTTONS
+    ----------------------------------------- */
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(26,26,26,0.8);
+      border: none;
+      color: var(--text);
+      font-size: 2rem;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      border-radius: 8px;
+      user-select: none;
+    }
 
-  .card-slider::-webkit-scrollbar {
-    height: 10px;
-  }
+    .carousel-btn:hover {
+      background: var(--accent);
+    }
 
-  .card-slider::-webkit-scrollbar-track {
-    background: #222;
-    border-radius: 10px;
-  }
+    .carousel-btn.prev {
+      left: 10px;
+    }
 
-  .card-slider::-webkit-scrollbar-thumb {
-    background: var(--accent);
-    border-radius: 10px;
-  }
+    .carousel-btn.next {
+      right: 10px;
+    }
 
-  /* Individual cards */
-  .card-slide {
-    flex: 0 0 100%; /* full width of the slider container */
-    max-width: 500px; /* optional: limits card width */
-    margin: 0 auto; /* center card */
-    transition: transform 0.3s ease;
-  }
+    /* ----------------------------------------
+       FOOTER
+    ----------------------------------------- */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #111;
+      margin-top: 3rem;
+    }
 
-  .card-slide img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    object-fit: contain;
-  }
-
-  .card-slide p {
-    margin-top: 0.5rem;
-    font-size: 1.1rem;
-  }
-
-  /* Center active card scale */
-  .card-slide.active {
-    transform: scale(1.08);
-  }
-
-  /* ----------------------------------------
-     FOOTER
-  ----------------------------------------- */
-  footer {
-    text-align: center;
-    padding: 2rem;
-    background: #111;
-    margin-top: 3rem;
-  }
-</style>
+  </style>
 </head>
 <body>
 
@@ -204,18 +192,40 @@
     <a href="social.html">Social</a>
   </nav>
 
-  <!-- Card Slider -->
-  <h2 class="slider-title">Custom Clothing</h2>
-  <div class="card-slider-container">
-    <div class="card-slider" id="customSlider">
-      <div class="card-slide"><img src="poptee.png" alt="Popeye Tee"><p>Popeye Tee</p></div>
-      <div class="card-slide"><img src="prntee.png" alt="Boriqua Nightmare Tee"><p>Boriqua Nightmare</p></div>
-      <div class="card-slide"><img src="s3ktee.png" alt="Sonic and Knuckles Tee"><p>Sonic & Knuckles</p></div>
-      <div class="card-slide"><img src="lprtee.png" alt="LP Reanimation Tee"><p>LP Reanimation</p></div>
-      <div class="card-slide"><img src="lpmtmtee.png" alt="LP Minutes to Midnight Tee"><p>Minutes to Midnight</p></div>
-      <div class="card-slide"><img src="bpftee.png" alt="Big Pun Tee"><p>Big Pun Tee</p></div>
+  <!-- CUSTOM CLOTHING CAROUSEL -->
+  <section>
+    <h2>Custom Clothing</h2>
+    <div class="carousel-container">
+      <button class="carousel-btn prev">&#10094;</button>
+      <div class="carousel-track">
+        <div class="carousel-card active">
+          <img src="poptee.png" alt="Popeye Tee" />
+          <p>Popeye Tee</p>
+        </div>
+        <div class="carousel-card">
+          <img src="prntee.png" alt="Boriqua Nightmare" />
+          <p>Boriqua Nightmare</p>
+        </div>
+        <div class="carousel-card">
+          <img src="s3ktee.png" alt="Sonic & Knuckles" />
+          <p>Sonic & Knuckles</p>
+        </div>
+        <div class="carousel-card">
+          <img src="lprtee.png" alt="LP Reanimation" />
+          <p>LP Reanimation</p>
+        </div>
+        <div class="carousel-card">
+          <img src="lpmtmtee.png" alt="Minutes to Midnight" />
+          <p>Minutes to Midnight</p>
+        </div>
+        <div class="carousel-card">
+          <img src="bpftee.png" alt="Big Pun Tee" />
+          <p>Big Pun Tee</p>
+        </div>
+      </div>
+      <button class="carousel-btn next">&#10095;</button>
     </div>
-  </div>
+  </section>
 
   <!-- MOCK ALBUM COVERS SECTION -->
   <section>
@@ -253,41 +263,35 @@
     <p>© 2025 Lil'man's Sketchbook — Dare to live, if you fear it you can't</p>
   </footer>
 
-  <!-- JS for active card scaling -->
+  <!-- CAROUSEL SCRIPT -->
   <script>
-    const slider = document.getElementById('customSlider');
-    const slides = slider.querySelectorAll('.card-slide');
+    const track = document.querySelector('.carousel-track');
+    const cards = Array.from(track.children);
+    const prevBtn = document.querySelector('.carousel-btn.prev');
+    const nextBtn = document.querySelector('.carousel-btn.next');
+    let currentIndex = 0;
 
-    function setActiveCard() {
-      const sliderRect = slider.getBoundingClientRect();
-      const sliderCenter = sliderRect.left + sliderRect.width / 2;
-
-      slides.forEach(slide => slide.classList.remove('active'));
-
-      let closestSlide = null;
-      let closestDistance = Infinity;
-
-      slides.forEach(slide => {
-        const slideRect = slide.getBoundingClientRect();
-        const slideCenter = slideRect.left + slideRect.width / 2;
-        const distance = Math.abs(sliderCenter - slideCenter);
-
-        if (distance < closestDistance) {
-          closestDistance = distance;
-          closestSlide = slide;
-        }
+    function updateCarousel() {
+      const width = cards[0].getBoundingClientRect().width;
+      track.style.transform = `translateX(-${currentIndex * width}px)`;
+      cards.forEach((card, index) => {
+        card.classList.toggle('active', index === currentIndex);
       });
-
-      if (closestSlide) closestSlide.classList.add('active');
     }
 
-    slider.addEventListener('scroll', () => {
-      requestAnimationFrame(setActiveCard);
+    prevBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex === 0) ? cards.length -1 : currentIndex -1;
+      updateCarousel();
     });
 
-    // initial highlight
-    window.addEventListener('load', setActiveCard);
-    window.addEventListener('resize', setActiveCard);
+    nextBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex === cards.length -1) ? 0 : currentIndex +1;
+      updateCarousel();
+    });
+
+    // Optional: Auto-center on load
+    window.addEventListener('load', updateCarousel);
+    window.addEventListener('resize', updateCarousel);
   </script>
 
 </body>
