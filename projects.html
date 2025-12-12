@@ -128,8 +128,8 @@
 
   .card-slider-container {
     overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    padding: 0 40px; /* peek of next/prev cards */
+  scroll-snap-type: x mandatory;
+  padding: 0; /* remove side padding */
   }
 
   .card-slider {
@@ -155,13 +155,9 @@
 
   /* Individual cards */
   .card-slide {
-    flex: 0 0 280px; /* smaller width so peek shows */
-    background: rgba(26,26,26,0.9);
-    border-radius: 16px;
-    padding: 1rem;
-    scroll-snap-align: center;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-    text-align: center;
+    flex: 0 0 100%; /* full width of the slider container */
+    max-width: 500px; /* optional: limits card width */
+    margin: 0 auto; /* center card */
     transition: transform 0.3s ease;
   }
 
@@ -179,7 +175,7 @@
 
   /* Center active card scale */
   .card-slide.active {
-    transform: scale(1.05);
+    transform: scale(1.08);
   }
 
   /* ----------------------------------------
