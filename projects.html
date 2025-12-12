@@ -1,129 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Projects — Lilman's Sketchbook</title>
-  <style>
-    @font-face {
-      font-family: "Bullpen3D";
-      src: url("fonts/Bullpen3D.ttf") format("truetype");
-    }
-    @font-face {
-      font-family: "Designer";
-      src: url("fonts/Designer.otf") format("truetype");
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Projects — Lilman's Sketchbook</title>
+<style>
+  @font-face {
+    font-family: "Bullpen3D";
+    src: url("fonts/Bullpen3D.ttf") format("truetype");
+  }
+  @font-face {
+    font-family: "Designer";
+    src: url("fonts/Designer.otf") format("truetype");
+  }
 
-    :root {
-      --bg: #0d0d0d;
-      --accent: #BA3B46;
-      --text: #ffffff;
-    }
+  :root {
+    --bg: #0d0d0d;
+    --accent: #BA3B46;
+    --text: #ffffff;
+  }
 
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: url("blueprint.jpg") center/cover no-repeat fixed;
-      color: var(--text);
-    }
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url("blueprint.jpg") center/cover no-repeat fixed;
+    color: var(--text);
+  }
 
-    nav {
-      background: #111;
-      padding: 1rem;
-      text-align: center;
-    }
+  header.header-image {
+    width: 100%;
+    height: 260px;
+    background: url("Header.png") center/cover no-repeat;
+  }
 
-    nav a {
-      font-family: "Bullpen3D", sans-serif;
-      color: var(--text);
-      margin: 0 1rem;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1.3rem;
-      letter-spacing: 1px;
-    }
+  header h1 {
+    text-align: center;
+    font-size: 3rem;
+    margin: 0;
+    padding: 2rem 1rem;
+  }
 
-    nav a:hover { color: var(--accent); }
+  nav {
+    background: #111;
+    padding: 1rem;
+    text-align: center;
+  }
 
-    h2.slider-title {
-      text-align: center;
-      font-family: "Designer", sans-serif;
-      font-size: 2.3rem;
-      margin-top: 3rem;
-      margin-bottom: 1.5rem;
-      color: var(--text);
-      letter-spacing: 2px;
-    }
+  nav a {
+    font-family: "Bullpen3D", sans-serif;
+    color: var(--text);
+    margin: 0 1rem;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+  }
+  nav a:hover { color: var(--accent); }
 
-    .slider-container {
-      position: relative;
-      width: 90%;
-      max-width: 700px;
-      margin: 3rem auto;
-      overflow: hidden;
-    }
+  h2.slider-title {
+    text-align: center;
+    font-family: "Designer", sans-serif;
+    font-size: 2.3rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    color: var(--text);
+    letter-spacing: 2px;
+  }
 
-    .slider-track {
-      display: flex;
-      justify-content: center;
-      transition: transform 0.5s ease;
-    }
+  /* Slider Container */
+  .slider-container {
+    position: relative;
+    width: 90%;
+    max-width: 700px;
+    margin: 0 auto 4rem auto;
+    overflow: hidden;
+  }
 
-    .slide {
-      flex: 0 0 200px;  /* small enough to fit several cards without scrolling */
-      margin: 0 10px;
-      transition: transform 0.3s ease, opacity 0.3s ease;
-      text-align: center;
-      opacity: 0.6;
-    }
+  .slider-track {
+    display: flex;
+    justify-content: center;
+    transition: transform 0.5s ease;
+  }
 
-    .slide.active {
-      transform: scale(1.2);
-      opacity: 1;
-      z-index: 1;
-    }
+  .slide {
+    flex: 0 0 220px; /* card width */
+    margin: 0 15px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    text-align: center;
+    opacity: 0.6;
+  }
 
-    .slide img {
-      width: 100%;
-      height: auto;
-      max-height: 300px;
-      object-fit: contain;
-      border-radius: 12px;
-    }
+  .slide.active {
+    transform: scale(1.2);
+    opacity: 1;
+    z-index: 1;
+  }
 
-    .slide p {
-      margin-top: 0.5rem;
-      font-size: 1.1rem;
-    }
+  .slide img {
+    width: 100%;
+    height: auto;
+    object-fit: contain; /* prevents cropping */
+    max-height: 300px;
+    border-radius: 12px;
+  }
 
-    .arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(26,26,26,0.8);
-      border: none;
-      color: var(--text);
-      font-size: 2rem;
-      padding: 0.5rem 1rem;
-      cursor: pointer;
-      border-radius: 8px;
-      z-index: 2;
-    }
+  .slide p {
+    margin-top: 0.5rem;
+    font-size: 1.1rem;
+  }
 
-    .arrow:hover { background: var(--accent); color: #111; }
+  .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(26,26,26,0.8);
+    border: none;
+    color: var(--text);
+    font-size: 2rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 8px;
+    z-index: 2;
+  }
 
-    .arrow-left { left: 0; }
-    .arrow-right { right: 0; }
+  .arrow:hover { background: var(--accent); color: #111; }
 
-    footer {
-      text-align: center;
-      padding: 2rem;
-      background: #111;
-      margin-top: 3rem;
-    }
-  </style>
+  .arrow-left { left: 10px; }   /* slightly away from edge */
+  .arrow-right { right: 10px; } /* slightly away from edge */
+
+  footer {
+    text-align: center;
+    padding: 2rem;
+    background: #111;
+    margin-top: 3rem;
+  }
+</style>
 </head>
 <body>
+
+<header class="header-image">
+  <h1>Projects</h1>
+</header>
 
 <nav>
   <a href="index.html">Home</a>
@@ -165,7 +182,9 @@ let currentIndex = 0;
 
 function updateSlider() {
   slides.forEach((slide, i) => slide.classList.toggle('active', i === currentIndex));
-  const offset = -currentIndex * (slides[0].offsetWidth + 20) + (track.parentElement.offsetWidth - slides[currentIndex].offsetWidth)/2;
+  const trackWidth = track.parentElement.offsetWidth;
+  const slideWidth = slides[currentIndex].offsetWidth + 30; // include margin
+  const offset = -currentIndex * slideWidth + (trackWidth - slides[currentIndex].offsetWidth) / 2;
   track.style.transform = `translateX(${offset}px)`;
 }
 
@@ -182,6 +201,9 @@ nextBtn.addEventListener('click', () => {
 window.addEventListener('load', updateSlider);
 window.addEventListener('resize', updateSlider);
 </script>
+
+</body>
+</html>
 
 </body>
 </html>
