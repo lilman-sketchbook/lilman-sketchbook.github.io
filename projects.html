@@ -32,7 +32,7 @@
     html, body {
       margin: 0;
       padding: 0;
-      overflow-x: hidden; /* removes side-scroller */
+      overflow-x: hidden;
     }
 
     body {
@@ -95,12 +95,17 @@
     /* ----------------------------------------
        Splide Custom Styling
     ----------------------------------------- */
+    .splide__slide {
+      display: flex;
+      justify-content: center; /* centers image inside slide */
+      align-items: center;
+    }
+
     .splide__slide img {
-      width: 60%;
+      width: 300px;  /* adjust this to make images bigger/smaller */
       height: auto;
-      display: block;
       border-radius: 12px;
-      object-fit: contain; /* ensures full image is visible */
+      object-fit: contain;
     }
 
     .splide__arrow {
@@ -115,11 +120,11 @@
     }
 
     .splide__arrow--prev {
-      left: 10px; /* distance from left edge */
+      left: 50px; /* move arrows slightly inward */
     }
 
     .splide__arrow--next {
-      right: 10px; /* distance from right edge */
+      right: 50px;
     }
 
     .splide__arrow:disabled {
@@ -249,16 +254,15 @@
   <!-- Splide JS -->
   <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
   <script>
-    new Splide( '#custom-carousel', {
+    new Splide('#custom-carousel', {
       type       : 'slide',
       perPage    : 1,
-      perMove    : 1,
+      focus      : 'center',
       arrows     : true,
       pagination : true,
-      gap        : '1rem',
-      autoplay   : false,
       rewind     : true,
-      focus      : 'center',
+      autoWidth  : true,   // makes slide shrink to fit image
+      gap        : '2rem',
     }).mount();
   </script>
 
