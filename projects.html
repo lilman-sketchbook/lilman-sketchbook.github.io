@@ -21,7 +21,7 @@
       font-weight: normal;
       font-style: normal;
     }
-    
+
     /* ----------------------------------------
        COLOR VARIABLES
     ----------------------------------------- */
@@ -76,6 +76,7 @@
       font-size: 1.3rem;
       letter-spacing: 1px;
     }
+
     nav a:hover {
       color: var(--accent);
     }
@@ -112,97 +113,71 @@
       line-height: 1.7;
       margin-bottom: 1rem;
     }
-     /* CARD SLIDER TITLE */
+
+    /* ----------------------------------------
+       CARD SLIDER TITLE
+    ----------------------------------------- */
     .slider-title {
-     text-align: center;
-     font-size: 2.3rem;
-     margin: 0 0 1rem 0;
-     color: var(--text);
-     font-family: "Designer", sans-serif;
-     letter-spacing: 2px;
-}
+      text-align: center;
+      font-size: 2.3rem;
+      margin: 0 0 1rem 0;
+      color: var(--text);
+      font-family: "Designer", sans-serif;
+      letter-spacing: 2px;
+    }
 
-     /* CARD SLIDER */
+    /* ----------------------------------------
+       CARD SLIDER
+    ----------------------------------------- */
     .card-slider {
-     display: flex;
-     overflow-x: auto;
-     scroll-snap-type: x mandatory;
-     gap: 1.5rem;
-     padding: 1rem 0 2rem 0;
-     scroll-behavior: smooth;
-}
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 1.5rem;
+      padding: 1rem 0 2rem 0;
+      scroll-behavior: smooth;
+    }
 
-   .card-slider::-webkit-scrollbar {
-     height: 10px;
-}
-   .card-slider::-webkit-scrollbar-track {
-     background: #222;
-     border-radius: 10px;
-}
-   .card-slider::-webkit-scrollbar-thumb {
-     background: var(--accent);
-     border-radius: 10px;
-}
+    .card-slider::-webkit-scrollbar {
+      height: 10px;
+    }
+    .card-slider::-webkit-scrollbar-track {
+      background: #222;
+      border-radius: 10px;
+    }
+    .card-slider::-webkit-scrollbar-thumb {
+      background: var(--accent);
+      border-radius: 10px;
+    }
 
-   /* Individual Cards */
-  .card-slide {
-     flex: 0 0 330px;     /* wider cards */
-     background: rgba(26, 26, 26, 0.9);
-     border-radius: 16px;
-     padding: 1rem;
-     scroll-snap-align: center;
-     box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-     text-align: center;
-}
+    /* ----------------------------------------
+       INDIVIDUAL CARDS
+    ----------------------------------------- */
+    .card-slide {
+      flex: 0 0 330px;
+      background: rgba(26,26,26,0.9);
+      border-radius: 16px;
+      padding: 1rem;
+      scroll-snap-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
- .card-slide img {
-    width: 100%;
-    height: 380px;       /* bigger image height */
-    object-fit: contain;
-    border-radius: 10px;
-}  
-  /* Card Slider Images Auto Height */
-.card-slide {
-  flex: 0 0 330px;        /* card width */
-  background: rgba(26,26,26,0.9);
-  border-radius: 16px;
-  padding: 1rem;
-  scroll-snap-align: center;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-}
+    .card-slide img {
+      width: 100%;
+      height: auto;       /* proportional height */
+      max-height: 380px;  /* large but not cropped */
+      object-fit: contain; /* ensures full image is visible */
+      border-radius: 12px;
+    }
 
-.card-image-wrapper {
-  height: 380px;          /* fixed height for all cards */
-  overflow: hidden;
-  border-radius: 12px;
-}
-
-.card-image-wrapper img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;      /* fills the container proportionally */
-  border-radius: 12px;
-}
-
-.card-slide p {
-  margin-top: 0.5rem;
-  font-size: 1.1rem;
-}  
-    
-.taller {
-  height: 380px !important; /* match the other images */
-  width: auto;
-  object-fit: contain;
-}
-    
- .card-slide p {
-    margin-top: 0.5rem;
-    font-size: 1.1rem;
-}
-
+    .card-slide p {
+      margin-top: 0.5rem;
+      font-size: 1.1rem;
+    }
 
     /* ----------------------------------------
        FOOTER
@@ -213,7 +188,6 @@
       background: #111;
       margin-top: 3rem;
     }
-
   </style>
 </head>
 <body>
@@ -230,55 +204,42 @@
     <a href="experience.html">Experience</a>
     <a href="social.html">Social</a>
   </nav>
-  
+
   <!-- Card Slider -->
-<h2 class="slider-title">Custom Clothing</h2>
+  <h2 class="slider-title">Custom Clothing</h2>
+  <div class="card-slider">
 
-<div class="card-slider">
-
-  <div class="card-slide">
-    <div class="card-image-wrapper">
+    <div class="card-slide">
       <img src="poptee.png" alt="Popeye Tee" />
+      <p>Popeye Tee</p>
     </div>
-    <p>Popeye Tee</p>
-  </div>
 
-  <div class="card-slide">
-    <div class="card-image-wrapper">
+    <div class="card-slide">
       <img src="prntee.png" alt="Boriqua Nightmare Tee" />
+      <p>Boriqua Nightmare</p>
     </div>
-    <p>Boriqua Nightmare</p>
-  </div>
 
-  <div class="card-slide">
-    <div class="card-image-wrapper">
+    <div class="card-slide">
       <img src="s3ktee.png" alt="Sonic and Knuckles Tee" />
+      <p>Sonic & Knuckles</p>
     </div>
-    <p>Sonic & Knuckles</p>
-  </div>
 
-  <div class="card-slide">
-    <div class="card-image-wrapper">
+    <div class="card-slide">
       <img src="lprtee.png" alt="LP Reanimation Tee" />
+      <p>LP Reanimation</p>
     </div>
-    <p>LP Reanimation</p>
-  </div>
 
-  <div class="card-slide">
-    <div class="card-image-wrapper">
+    <div class="card-slide">
       <img src="lpmtmtee.png" alt="LP Minutes to Midnight Tee" />
+      <p>Minutes to Midnight</p>
     </div>
-    <p>Minutes to Midnight</p>
-  </div>
 
-  <div class="card-slide">
-    <div class="card-image-wrapper">
+    <div class="card-slide">
       <img src="bpftee.png" alt="Big Pun Tee" />
+      <p>Big Pun Tee</p>
     </div>
-    <p>Big Pun Tee</p>
-  </div>
 
-</div>
+  </div>
 
   <!-- MOCK ALBUM COVERS SECTION -->
   <section>
@@ -318,3 +279,4 @@
 
 </body>
 </html>
+
