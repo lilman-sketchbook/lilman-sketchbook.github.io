@@ -105,42 +105,46 @@
       line-height: 1.7;
       margin-bottom: 1rem;
     }
+    /* CARD SLIDER */
+.card-slider {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 1.5rem;
+  padding: 1rem 0;
+  padding-bottom: 2rem;
+  scroll-behavior: smooth;
+}
 
-    /* ----------------------------------------
-       SWIPE GALLERY
-    ----------------------------------------- */
-    .swipe-gallery {
-      display: flex;
-      overflow-x: scroll;
-      scroll-snap-type: x mandatory;
-      gap: 1rem;
-      padding-bottom: 1rem;
-    }
+.card-slider::-webkit-scrollbar {
+  height: 10px;
+}
+.card-slider::-webkit-scrollbar-track {
+  background: #222;
+  border-radius: 10px;
+}
+.card-slider::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 10px;
+}
 
-    .swipe-gallery img {
-      height: 300px;       
-      width: auto;         
-      object-fit: contain;
-      flex: 0 0 auto;      
-      border-radius: 12px;
-      scroll-snap-align: center;
-    }
+/* Individual Cards */
+.card-slide {
+  flex: 0 0 260px;        /* width of each card */
+  background: rgba(26, 26, 26, 0.85);
+  border-radius: 16px;
+  padding: 1rem;
+  scroll-snap-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  text-align: center;
+}
 
-    /* ----------------------------------------
-       IMAGE ROWS
-    ----------------------------------------- */
-    .image-row {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .image-row img {
-      width: 100%;
-      max-width: 300px;
-      border-radius: 12px;
-      margin: 0.5rem;
-    }
+.card-slide img {
+  width: 100%;
+  height: 250px;
+  object-fit: contain;
+  border-radius: 10px;
+}
 
     /* ----------------------------------------
        FOOTER
@@ -168,22 +172,41 @@
     <a href="experience.html">Experience</a>
     <a href="social.html">Social</a>
   </nav>
+  
+  <!-- Card Slider-->
+  <div class="card-slider">
 
-  <!-- CUSTOM CLOTHING SECTION -->
-  <section>
-    <h2>Custom Clothing</h2>
-    <div class="card">
-      <p>A collection of my personal custom prints.</p>
+  <div class="card-slide">
+    <img src="poptee.png" alt="Popeye Tee" />
+    <p>Popeye Tee</p>
+  </div>
 
-      <!-- Swipe Gallery -->
-      <div class="swipe-gallery">
-        <img src="poptee.png" alt="Popeye Tee" />
-        <img src="prntee.png" alt="Boriqua Nightmare" />
-        <img src="s3ktee.png" alt="Sonic and Knuckles Tee" />
-        <img src="lprtee.png" alt="Linkin Park Reanimation Tee" />
-        <img src="lpmtmtee.png" alt="Linkin Park Minutes to Midnight Tee" /> 
-        <img src="bpftee.png" alt="Big Pun Tee front" />
-      </div>
+  <div class="card-slide">
+    <img src="prntee.png" alt="Boriqua Nightmare Tee" />
+    <p>Boriqua Nightmare</p>
+  </div>
+
+  <div class="card-slide">
+    <img src="s3ktee.png" alt="Sonic and Knuckles Tee" />
+    <p>Sonic & Knuckles</p>
+  </div>
+
+  <div class="card-slide">
+    <img src="lprtee.png" alt="LP Reanimation Tee" />
+    <p>LP Reanimation</p>
+  </div>
+
+  <div class="card-slide">
+    <img src="lpmtmtee.png" alt="LP Minutes to Midnight Tee" />
+    <p>Minutes to Midnight</p>
+  </div>
+
+  <div class="card-slide">
+    <img src="bpftee.png" alt="Big Pun Tee" />
+    <p>Big Pun Tee</p>
+  </div>
+
+</div>
     </div>
   </section>
 
