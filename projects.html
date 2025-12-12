@@ -38,7 +38,7 @@
     body {
       margin: 0;
       font-family: 'Arial', sans-serif;
-      background: url("Loop.jpg") center/cover no-repeat fixed;
+      background: url("blueprint.jpg") center/cover no-repeat fixed;
       color: var(--text);
     }
 
@@ -160,8 +160,14 @@
     height: 380px;       /* bigger image height */
     object-fit: contain;
     border-radius: 10px;
+}  
+    
+.taller {
+  height: 380px !important; /* match the other images */
+  width: auto;
+  object-fit: contain;
 }
-
+    
  .card-slide p {
     margin-top: 0.5rem;
     font-size: 1.1rem;
@@ -226,7 +232,7 @@
   </div>
 
   <div class="card-slide">
-    <img src="bpftee.png" alt="Big Pun Tee" />
+    <img src="bpftee.png" alt="Big Pun Tee" class="taller" />
     <p>Big Pun Tee</p>
   </div>
 
