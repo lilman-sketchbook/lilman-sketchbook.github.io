@@ -1,20 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Projects — Lilman's Sketchbook</title>
+
+  <!-- Splide CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: url("blueprint.jpg") center/cover no-repeat fixed;
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    /* ----------------------------------------
+       CUSTOM FONT
+    ----------------------------------------- */
+    @font-face {
+      font-family: "Bullpen3D";
+      src: url("fonts/Bullpen3D.ttf") format("truetype");
+      font-weight: normal;
+      font-style: normal;
     }
 
+    @font-face {
+      font-family: "Designer";
+      src: url("fonts/Designer.otf") format("truetype");
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    /* ----------------------------------------
+       RESET & BODY
+    ----------------------------------------- */
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden; /* removes side-scroller */
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background: url("blueprint.jpg") center/cover no-repeat fixed;
+      color: #ffffff;
+    }
+
+    /* ----------------------------------------
+       HEADER
+    ----------------------------------------- */
     header.header-image {
       width: 100%;
       height: 260px;
@@ -28,74 +57,101 @@
       padding: 2rem 1rem;
     }
 
+    /* ----------------------------------------
+       NAVIGATION
+    ----------------------------------------- */
     nav {
       background: #111;
-      width: 100%;
+      padding: 1rem;
       text-align: center;
-      padding: 1rem 0;
     }
+
     nav a {
-      color: #fff;
+      font-family: "Bullpen3D", sans-serif;
+      color: #ffffff;
       margin: 0 1rem;
       text-decoration: none;
       font-weight: bold;
-      font-size: 1.2rem;
+      font-size: 1.3rem;
+      letter-spacing: 1px;
     }
+
     nav a:hover {
       color: #BA3B46;
     }
 
-    h2 {
-      margin: 2rem 0 1rem;
+    /* ----------------------------------------
+       CARD SLIDER TITLE
+    ----------------------------------------- */
+    .slider-title {
       text-align: center;
-      font-size: 2rem;
+      font-size: 2.3rem;
+      margin: 2rem 0 1rem;
+      color: #ffffff;
+      font-family: "Designer", sans-serif;
+      letter-spacing: 2px;
     }
 
-    /* Carousel Styles */
-    .carousel {
-      position: relative;
-      width: 90%;
-      max-width: 600px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-      border-radius: 12px;
-      margin-bottom: 3rem;
-    }
-
-    .carousel img {
+    /* ----------------------------------------
+       Splide Custom Styling
+    ----------------------------------------- */
+    .splide__slide img {
       width: 100%;
       height: auto;
       display: block;
       border-radius: 12px;
-      transition: transform 0.3s ease;
+      object-fit: contain; /* ensures full image is visible */
     }
 
-    .arrow {
-      position: absolute;
+    .splide__arrow {
+      background: rgba(26,26,26,0.8);
+      color: #ffffff;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
       top: 50%;
       transform: translateY(-50%);
-      font-size: 2rem;
-      background: rgba(0,0,0,0.5);
-      padding: 0.3rem 0.6rem;
-      border-radius: 50%;
-      cursor: pointer;
-      user-select: none;
-      color: #fff;
+      font-size: 1.2rem;
     }
 
-    .arrow-left { left: 20px; }
-    .arrow-right { right: 20px; }
+    .splide__arrow--prev {
+      left: 10px; /* distance from left edge */
+    }
 
-    /* Other sections */
+    .splide__arrow--next {
+      right: 10px; /* distance from right edge */
+    }
+
+    .splide__arrow:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+    }
+
+    .splide__pagination {
+      bottom: -25px;
+    }
+
+    /* ----------------------------------------
+       SECTIONS
+    ----------------------------------------- */
     section {
       max-width: 900px;
-      width: 90%;
       margin: 2rem auto;
-      padding: 2rem;
+      padding: 2rem 1.5rem;
       background: rgba(0,0,0,0.6);
       border-radius: 12px;
+    }
+
+    section h2 {
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .card p {
+      font-size: 1.2rem;
+      line-height: 1.7;
+      margin-bottom: 1rem;
     }
 
     .image-row {
@@ -103,29 +159,32 @@
       flex-wrap: wrap;
       justify-content: center;
     }
+
     .image-row img {
       width: 100%;
       max-width: 300px;
-      margin: 0.5rem;
       border-radius: 12px;
-      height: auto;
+      margin: 0.5rem;
     }
 
+    /* ----------------------------------------
+       FOOTER
+    ----------------------------------------- */
     footer {
       text-align: center;
       padding: 2rem;
       background: #111;
-      width: 100%;
+      margin-top: 3rem;
     }
 
   </style>
 </head>
 <body>
 
-  <!-- Header -->
+  <!-- HEADER IMAGE -->
   <header class="header-image"></header>
 
-  <!-- Navigation -->
+  <!-- NAVIGATION -->
   <nav>
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
@@ -135,37 +194,51 @@
     <a href="social.html">Social</a>
   </nav>
 
-  <!-- Custom Clothing Carousel -->
-  <h2>Custom Clothing</h2>
-  <div class="carousel">
-    <div class="arrow arrow-left">&#10094;</div>
-    <img src="poptee.png" alt="Popeye Tee" id="carousel-image">
-    <div class="arrow arrow-right">&#10095;</div>
+  <!-- CARD SLIDER -->
+  <h2 class="slider-title">Custom Clothing</h2>
+
+  <div id="custom-carousel" class="splide" aria-label="Custom Clothing Carousel">
+    <div class="splide__track">
+      <ul class="splide__list">
+        <li class="splide__slide"><img src="poptee.png" alt="Popeye Tee"></li>
+        <li class="splide__slide"><img src="prntee.png" alt="Boriqua Nightmare Tee"></li>
+        <li class="splide__slide"><img src="s3ktee.png" alt="Sonic and Knuckles Tee"></li>
+        <li class="splide__slide"><img src="lprtee.png" alt="LP Reanimation Tee"></li>
+        <li class="splide__slide"><img src="lpmtmtee.png" alt="LP Minutes to Midnight Tee"></li>
+        <li class="splide__slide"><img src="bpftee.png" alt="Big Pun Tee"></li>
+      </ul>
+    </div>
   </div>
 
-  <!-- Mock Album Covers Section -->
+  <!-- MOCK ALBUM COVERS SECTION -->
   <section>
     <h2>Mock Album Covers</h2>
-    <div class="image-row">
-      <img src="album1.png" alt="Album 1">
-      <img src="album2.png" alt="Album 2">
-      <img src="album3.png" alt="Album 3">
-      <img src="album4.png" alt="Album 4">
+    <div class="card">
+      <p>A series of original album cover experiments.</p>
+      <div class="image-row">
+        <img src="album1.png" alt="Album 1">
+        <img src="album2.png" alt="Album 2">
+        <img src="album3.png" alt="Album 3">
+        <img src="album4.png" alt="Album 4">
+      </div>
     </div>
   </section>
 
-  <!-- Photo Edits Section -->
+  <!-- PHOTO EDITS SECTION -->
   <section>
     <h2>Photo Edits</h2>
-    <div class="image-row">
-      <img src="edit1.png" alt="Edit 1">
-      <img src="edit2.png" alt="Edit 2">
-      <img src="edit3.png" alt="Edit 3">
-      <img src="edit4.png" alt="Edit 4">
+    <div class="card">
+      <p>A set of augmented imagery.</p>
+      <div class="image-row">
+        <img src="edit1.png" alt="Edit 1">
+        <img src="edit2.png" alt="Edit 2">
+        <img src="edit3.png" alt="Edit 3">
+        <img src="edit4.png" alt="Edit 4">
+      </div>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- FOOTER -->
   <footer>
     <div>
       <img src="signature Banner.png" alt="Footer Artwork" style="width: 100%; max-width: 600px;">
@@ -173,36 +246,20 @@
     <p>© 2025 Lil'man's Sketchbook — Dare to live, if you fear it you can't</p>
   </footer>
 
-  <!-- Carousel Script -->
+  <!-- Splide JS -->
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
   <script>
-    const images = [
-      "poptee.png",
-      "prntee.png",
-      "s3ktee.png",
-      "lprtee.png",
-      "lpmtmtee.png",
-      "bpftee.png"
-    ];
-
-    let current = 0;
-    const carouselImage = document.getElementById("carousel-image");
-
-    function showImage(index) {
-      carouselImage.src = images[index];
-    }
-
-    document.querySelector(".arrow-left").addEventListener("click", () => {
-      current = (current - 1 + images.length) % images.length;
-      showImage(current);
-    });
-
-    document.querySelector(".arrow-right").addEventListener("click", () => {
-      current = (current + 1) % images.length;
-      showImage(current);
-    });
-
-    // Initialize
-    showImage(current);
+    new Splide( '#custom-carousel', {
+      type       : 'slide',
+      perPage    : 1,
+      perMove    : 1,
+      arrows     : true,
+      pagination : true,
+      gap        : '1rem',
+      autoplay   : false,
+      rewind     : true,
+      focus      : 'center',
+    }).mount();
   </script>
 
 </body>
