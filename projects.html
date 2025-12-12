@@ -161,6 +161,36 @@
     object-fit: contain;
     border-radius: 10px;
 }  
+  /* Card Slider Images Auto Height */
+.card-slide {
+  flex: 0 0 330px;        /* card width */
+  background: rgba(26,26,26,0.9);
+  border-radius: 16px;
+  padding: 1rem;
+  scroll-snap-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-image-wrapper {
+  height: 380px;          /* fixed height for all cards */
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.card-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;      /* fills the container proportionally */
+  border-radius: 12px;
+}
+
+.card-slide p {
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
+}  
     
 .taller {
   height: 380px !important; /* match the other images */
@@ -201,44 +231,54 @@
     <a href="social.html">Social</a>
   </nav>
   
-  <!-- Card Slider-->
-  <h2 class="slider-title">Custom Clothing</h2>
-  
-  <div class="card-slider">
+  <!-- Card Slider -->
+<h2 class="slider-title">Custom Clothing</h2>
+
+<div class="card-slider">
 
   <div class="card-slide">
-    <img src="poptee.png" alt="Popeye Tee" />
+    <div class="card-image-wrapper">
+      <img src="poptee.png" alt="Popeye Tee" />
+    </div>
     <p>Popeye Tee</p>
   </div>
 
   <div class="card-slide">
-    <img src="prntee.png" alt="Boriqua Nightmare Tee" />
+    <div class="card-image-wrapper">
+      <img src="prntee.png" alt="Boriqua Nightmare Tee" />
+    </div>
     <p>Boriqua Nightmare</p>
   </div>
 
   <div class="card-slide">
-    <img src="s3ktee.png" alt="Sonic and Knuckles Tee" />
+    <div class="card-image-wrapper">
+      <img src="s3ktee.png" alt="Sonic and Knuckles Tee" />
+    </div>
     <p>Sonic & Knuckles</p>
   </div>
 
   <div class="card-slide">
-    <img src="lprtee.png" alt="LP Reanimation Tee" />
+    <div class="card-image-wrapper">
+      <img src="lprtee.png" alt="LP Reanimation Tee" />
+    </div>
     <p>LP Reanimation</p>
   </div>
 
   <div class="card-slide">
-    <img src="lpmtmtee.png" alt="LP Minutes to Midnight Tee" />
+    <div class="card-image-wrapper">
+      <img src="lpmtmtee.png" alt="LP Minutes to Midnight Tee" />
+    </div>
     <p>Minutes to Midnight</p>
   </div>
 
   <div class="card-slide">
-    <img src="bpftee.png" alt="Big Pun Tee" class="taller" />
+    <div class="card-image-wrapper">
+      <img src="bpftee.png" alt="Big Pun Tee" />
+    </div>
     <p>Big Pun Tee</p>
   </div>
 
 </div>
-    </div>
-  </section>
 
   <!-- MOCK ALBUM COVERS SECTION -->
   <section>
