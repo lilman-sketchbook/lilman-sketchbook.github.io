@@ -5,55 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Projects — Lilman's Sketchbook</title>
   <style>
-    /* ------------------ CUSTOM FONTS ------------------ */
     @font-face {
       font-family: "Bullpen3D";
       src: url("fonts/Bullpen3D.ttf") format("truetype");
-      font-weight: normal;
-      font-style: normal;
     }
     @font-face {
       font-family: "Designer";
       src: url("fonts/Designer.otf") format("truetype");
-      font-weight: normal;
-      font-style: normal;
     }
 
-    /* ------------------ COLOR VARIABLES ------------------ */
     :root {
       --bg: #0d0d0d;
       --accent: #BA3B46;
-      --accent2: #DE9151;
       --text: #ffffff;
     }
 
-    /* ------------------ BODY ------------------ */
     body {
       margin: 0;
-      font-family: 'Arial', sans-serif;
+      font-family: Arial, sans-serif;
       background: url("blueprint.jpg") center/cover no-repeat fixed;
       color: var(--text);
     }
 
-    /* ------------------ HEADER ------------------ */
-    header.header-image {
-      width: 100%;
-      height: 260px;
-      background: url("Header.png") center/cover no-repeat;
-    }
-    header h1 {
-      text-align: center;
-      font-size: 3rem;
-      margin: 0;
-      padding: 2rem 1rem;
-    }
-
-    /* ------------------ NAVIGATION ------------------ */
     nav {
       background: #111;
       padding: 1rem;
       text-align: center;
     }
+
     nav a {
       font-family: "Bullpen3D", sans-serif;
       color: var(--text);
@@ -63,87 +42,48 @@
       font-size: 1.3rem;
       letter-spacing: 1px;
     }
+
     nav a:hover {
       color: var(--accent);
     }
 
-    /* ------------------ SECTIONS ------------------ */
-    section {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 3rem 1.5rem;
-      background: rgba(0,0,0,0.6);
-      border-radius: 12px;
-    }
-    section h2 {
-      font-size: 2.5rem;
-      text-align: center;
-      margin-bottom: 1.5rem;
-      border-left: none;
-      padding-left: 0;
-    }
-
-    .card {
-      padding: 1.5rem;
-      margin-bottom: 1.5rem;
-      border-radius: 12px;
-      background: rgba(26,26,26,0.8);
-      box-shadow: 0 0 10px rgba(0,0,0,0.4);
-    }
-    .card p {
-      font-size: 1.2rem;
-      line-height: 1.7;
-      margin-bottom: 1rem;
-    }
-
-    /* ------------------ CARD SLIDER ------------------ */
-    .slider-title {
-      text-align: center;
-      font-size: 2.3rem;
-      margin: 0 0 1rem 0;
-      color: var(--text);
-      font-family: "Designer", sans-serif;
-      letter-spacing: 2px;
-    }
-
     .slider-container {
       position: relative;
-      max-width: 100%;
-      margin: 2rem auto;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .carousel-track {
-      display: flex;
+      width: 90%;
+      max-width: 600px;
+      margin: 3rem auto;
       overflow: hidden;
-      width: 100%;
-      max-width: 1000px;
-      scroll-behavior: smooth;
     }
 
-    .card-slide {
+    .slider-track {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+
+    .slide {
       min-width: 100%;
-      flex-shrink: 0;
-      background: rgba(26,26,26,0.9);
-      border-radius: 16px;
-      padding: 1rem;
+      transition: transform 0.3s ease;
       text-align: center;
-      transition: transform 0.4s ease;
     }
 
-    .card-slide img {
+    .slide img {
       width: 100%;
       height: auto;
+      max-height: 450px;
+      object-fit: contain;
       border-radius: 12px;
     }
 
-    .card-slide.active {
+    .slide.active img {
       transform: scale(1.05);
     }
 
-    .carousel-btn {
+    .slide p {
+      margin-top: 0.5rem;
+      font-size: 1.1rem;
+    }
+
+    .arrow {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
@@ -153,30 +93,27 @@
       font-size: 2rem;
       padding: 0.5rem 1rem;
       cursor: pointer;
-      z-index: 10;
       border-radius: 8px;
-      transition: background 0.3s;
-    }
-    .carousel-btn:hover {
-      background: rgba(186,59,70,0.9);
-    }
-    .carousel-btn.prev { left: -40px; }
-    .carousel-btn.next { right: -40px; }
-
-    /* ------------------ IMAGE ROWS ------------------ */
-    .image-row {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-    .image-row img {
-      width: 100%;
-      max-width: 300px;
-      border-radius: 12px;
-      margin: 0.5rem;
     }
 
-    /* ------------------ FOOTER ------------------ */
+    .arrow:hover {
+      background: var(--accent);
+      color: #111;
+    }
+
+    .arrow-left { left: 10px; }
+    .arrow-right { right: 10px; }
+
+    h2.slider-title {
+      text-align: center;
+      font-family: "Designer", sans-serif;
+      font-size: 2.3rem;
+      margin-top: 3rem;
+      margin-bottom: 1.5rem;
+      color: var(--text);
+      letter-spacing: 2px;
+    }
+
     footer {
       text-align: center;
       padding: 2rem;
@@ -187,118 +124,78 @@
 </head>
 <body>
 
-  <!-- HEADER IMAGE -->
-  <header class="header-image"></header>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="sketchbookpages.html">Sketchbook Pages</a>
+  <a href="projects.html">Projects</a>
+  <a href="experience.html">Experience</a>
+  <a href="social.html">Social</a>
+</nav>
 
-  <!-- NAVIGATION -->
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="sketchbookpages.html">Sketchbook Pages</a>
-    <a href="projects.html">Projects</a>
-    <a href="experience.html">Experience</a>
-    <a href="social.html">Social</a>
-  </nav>
-
-  <!-- CARD SLIDER -->
-  <h2 class="slider-title">Custom Clothing</h2>
-  <div class="slider-container">
-    <button class="carousel-btn prev">&#10094;</button>
-    <div class="carousel-track">
-      <div class="card-slide active">
-        <img src="poptee.png" alt="Popeye Tee">
-        <p>Popeye Tee</p>
-      </div>
-      <div class="card-slide">
-        <img src="prntee.png" alt="Boriqua Nightmare">
-        <p>Boriqua Nightmare</p>
-      </div>
-      <div class="card-slide">
-        <img src="s3ktee.png" alt="Sonic & Knuckles">
-        <p>Sonic & Knuckles</p>
-      </div>
-      <div class="card-slide">
-        <img src="lprtee.png" alt="LP Reanimation Tee">
-        <p>LP Reanimation</p>
-      </div>
-      <div class="card-slide">
-        <img src="lpmtmtee.png" alt="LP Minutes to Midnight Tee">
-        <p>Minutes to Midnight</p>
-      </div>
-      <div class="card-slide">
-        <img src="bpftee.png" alt="Big Pun Tee">
-        <p>Big Pun Tee</p>
-      </div>
+<h2 class="slider-title">Custom Clothing</h2>
+<div class="slider-container">
+  <button class="arrow arrow-left">&#8592;</button>
+  <div class="slider-track">
+    <div class="slide active">
+      <img src="poptee.png" alt="Popeye Tee">
+      <p>Popeye Tee</p>
     </div>
-    <button class="carousel-btn next">&#10095;</button>
+    <div class="slide">
+      <img src="prntee.png" alt="Boriqua Nightmare Tee">
+      <p>Boriqua Nightmare</p>
+    </div>
+    <div class="slide">
+      <img src="s3ktee.png" alt="Sonic and Knuckles Tee">
+      <p>Sonic & Knuckles</p>
+    </div>
+    <div class="slide">
+      <img src="lprtee.png" alt="LP Reanimation Tee">
+      <p>LP Reanimation</p>
+    </div>
+    <div class="slide">
+      <img src="lpmtmtee.png" alt="LP Minutes to Midnight Tee">
+      <p>Minutes to Midnight</p>
+    </div>
+    <div class="slide">
+      <img src="bpftee.png" alt="Big Pun Tee">
+      <p>Big Pun Tee</p>
+    </div>
   </div>
+  <button class="arrow arrow-right">&#8594;</button>
+</div>
 
-  <!-- MOCK ALBUM COVERS SECTION -->
-  <section>
-    <h2>Mock Album Covers</h2>
-    <div class="card">
-      <p>A series of original album cover experiments.</p>
-      <div class="image-row">
-        <img src="album1.png" alt="Album 1">
-        <img src="album2.png" alt="Album 2">
-        <img src="album3.png" alt="Album 3">
-        <img src="album4.png" alt="Album 4">
-      </div>
-    </div>
-  </section>
+<footer>
+  <div>
+    <img src="signature Banner.png" alt="Footer Artwork" style="width:100%; max-width:600px;">
+  </div>
+  <p>© 2025 Lil'man's Sketchbook — Dare to live, if you fear it you can't</p>
+</footer>
 
-  <!-- PHOTO EDITS SECTION -->
-  <section>
-    <h2>Photo Edits</h2>
-    <div class="card">
-      <p>A set of augmented imagery.</p>
-      <div class="image-row">
-        <img src="edit1.png" alt="Edit 1">
-        <img src="edit2.png" alt="Edit 2">
-        <img src="edit3.png" alt="Edit 3">
-        <img src="edit4.png" alt="Edit 4">
-      </div>
-    </div>
-  </section>
+<script>
+  const track = document.querySelector('.slider-track');
+  const slides = Array.from(document.querySelectorAll('.slide'));
+  const prevBtn = document.querySelector('.arrow-left');
+  const nextBtn = document.querySelector('.arrow-right');
+  let currentIndex = 0;
 
-  <!-- FOOTER -->
-  <footer>
-    <div>
-      <img src="signature Banner.png" alt="Footer Artwork" style="width: 100%; max-width: 600px;">
-    </div>
-    <p>© 2025 Lil'man's Sketchbook — Dare to live, if you fear it you can't</p>
-  </footer>
-
-  <!-- CAROUSEL SCRIPT -->
-  <script>
-    const track = document.querySelector('.carousel-track');
-    const slides = Array.from(track.children);
-    const prevBtn = document.querySelector('.carousel-btn.prev');
-    const nextBtn = document.querySelector('.carousel-btn.next');
-    let currentIndex = 0;
-
-    function updateCarousel() {
-      const slideWidth = slides[0].getBoundingClientRect().width;
-      track.scrollLeft = slideWidth * currentIndex;
-
-      slides.forEach((slide, idx) => {
-        slide.classList.toggle('active', idx === currentIndex);
-      });
-    }
-
-    prevBtn.addEventListener('click', () => {
-      currentIndex = (currentIndex === 0) ? slides.length - 1 : currentIndex - 1;
-      updateCarousel();
+  function updateSlider() {
+    slides.forEach((slide, i) => {
+      slide.classList.toggle('active', i === currentIndex);
     });
+    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+  }
 
-    nextBtn.addEventListener('click', () => {
-      currentIndex = (currentIndex === slides.length - 1) ? 0 : currentIndex + 1;
-      updateCarousel();
-    });
+  prevBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex === 0) ? slides.length - 1 : currentIndex - 1;
+    updateSlider();
+  });
 
-    window.addEventListener('load', updateCarousel);
-    window.addEventListener('resize', updateCarousel);
-  </script>
+  nextBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex === slides.length - 1) ? 0 : currentIndex + 1;
+    updateSlider();
+  });
+</script>
 
 </body>
 </html>
